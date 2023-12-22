@@ -28,7 +28,7 @@ function getDNSStats(domains) {
    .match(/\w+./g).length)
    .sort()
    .reverse()[0];
-   return domains.join(" ").match(new RegExp(`(\.\w+){${max-1},}`,gm));
+   return domains.join(" ").match(new RegExp(`(\.\w+){${max-1},}`,"gm"));
 }
 
 module.exports = {

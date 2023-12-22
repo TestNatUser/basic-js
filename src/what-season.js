@@ -25,8 +25,8 @@ function getSeason(date) {
       }
   } else if (arguments.length === 0) {
     return 'Unable to determine the time of year!';
-  }
-  return 'Invalid date!';
+  } 
+  throw Error("Invalid date!");
 }
 
 module.exports = {
