@@ -14,10 +14,11 @@ const chainMaker = {
     return this;
   },
   removeLink(position) {
-    if(typeof position==='number'&&position>0&&position<this.getLength()){
+    if(typeof position==='number'&&position>0&&position<=this.getLength()){
       this.chain.splice(position-1,1);
       return this;
     }
+    this.chain=[];
    throw new Error("You can't remove incorrect link!");
   },
   reverseChain() {
