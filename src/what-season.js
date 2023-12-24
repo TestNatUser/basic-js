@@ -13,6 +13,11 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function getSeason(date) {
   if (date instanceof Date) {
+    try{
+      date.getUTCDate()
+    } catch (er){
+      throw Error("Invalid date!");
+    }
       let count = date.getMonth();
       if (count == 0 || count == 1 || count == 11) {
         return 'winter';
